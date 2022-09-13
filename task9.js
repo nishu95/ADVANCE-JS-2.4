@@ -1,4 +1,4 @@
-/*
+
 // call
 var obj={num:2}
 //var obj2={num:5}
@@ -25,7 +25,7 @@ var Student=function(){
 }
 var bb=Student.bind(student);
 bb();
-*/
+
 
 // currying method 1 (by bind method)
 var multiply=function(x,y){
