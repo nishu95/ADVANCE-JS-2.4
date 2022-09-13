@@ -1,4 +1,4 @@
-
+/*
 // this inside global scope
 this.table='window table';
 console.log(window.table);
@@ -179,4 +179,64 @@ d.register();
 var e=new student('shillu',55,1111,22);
 e.register();
 console.log(student.numberOfKids());
+*/
+
+
+// fat arrow 
+ // both code below are of same functionality
+
+// var getA = function (a){
+//     return a;
+// }
+/*
+let getA = a => a;
+console.log(getA(12));
+
+let square = (a) => {return a*a;}
+console.log(square(12));
+
+var a=4;
+let square1 = _ => {return a*a;}
+console.log(square1());
+*/
+
+var x=function(){
+    var that = this;
+    this.val=1;
+    setTimeout(function(){
+        that.val++;
+        console.log(that.val)
+    },1)
+};
+
+var xx=new x();
+
+   // but fat arrow do not have it's own 'this' which means it's gonna use it's parent's this and it bind it.
+var x=function(){
+    this.val=1;
+    setTimeout(() => {
+        this.val++;
+        console.log(this.val)
+    },1)
+};
+
+var xx=new x();
+
+  // fat arrow does not have arguments varibale
+
+var x=function(){
+    console.log(arguments[0]);
+}
+
+x(1,2,3);
+
+  // for fat arrow rectifying things
+var x= (...n) => {
+    console.log(n[0]);
+}
+
+x(1,2,3);
+
+
+
 
