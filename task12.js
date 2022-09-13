@@ -1,4 +1,4 @@
-/*
+
 // this inside global scope
 this.table='window table';
 console.log(window.table);
@@ -179,7 +179,7 @@ d.register();
 var e=new student('shillu',55,1111,22);
 e.register();
 console.log(student.numberOfKids());
-*/
+
 
 
 // fat arrow 
@@ -188,7 +188,7 @@ console.log(student.numberOfKids());
 // var getA = function (a){
 //     return a;
 // }
-/*
+
 let getA = a => a;
 console.log(getA(12));
 
@@ -198,7 +198,7 @@ console.log(square(12));
 var a=4;
 let square1 = _ => {return a*a;}
 console.log(square1());
-*/
+
 
 var x=function(){
     var that = this;
@@ -236,6 +236,38 @@ var x= (...n) => {
 }
 
 x(1,2,3);
+
+
+
+class student{
+    constructor(name,age,phone,marks){
+        this.name=name;
+        this.age=age;
+        this.phone=phone;
+        this.marks=marks;
+    }
+    static count=0;
+
+    setPlacementAge(minPlacementAge){
+        return (minPlacementMarks) => {
+            if(this.age>minPlacementAge && this.marks>minPlacementMarks){
+                console.log(this.name+ ' is ready for placements');
+            }else{
+                console.log(this.name+ ' is ready NOT for placements');
+
+            }
+        }
+    }
+
+    static numberOfKids(){
+        return student.count;
+    }
+}
+
+var a=new student('gillu',20,20201111,90);
+var b=new student('tillu',21,444444444,39);
+a.setPlacementAge(18)(40);
+b.setPlacementAge(18)(40);
 
 
 
